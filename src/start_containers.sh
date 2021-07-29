@@ -35,4 +35,4 @@ docker run \
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume ${HOME}/.vault/.secrets:/.vault/.secrets \
-    islasgeci/reproducibility_inspector:latest
+    islasgeci/weak_inspector:latest
