@@ -5,7 +5,7 @@ TZ=America/Los_Angeles
 UUID=4637ce28-50aa-41c8-93af-1489f5d7d296
 
 # Reinicia los contenedores diariamente
-@daily . ${HOME}/src/notify_healthchecks.sh && notify_healthchecks "${UUID}/start" "Stoping containers" && ${HOME}/src/stop_containers.sh && notify_healthchecks ${UUID} "Containers stoped successfully" || notify_healthchecks "${UUID}/fail" "Containers did not stop" && notify_healthchecks "${UUID}/start" "Starting containers" && ${HOME}/src/start_containers.sh && notify_healthchecks ${UUID} "Containers started successfully" || notify_healthchecks "${UUID}/fail" "Containers did not start"
+0 23 * * * . ${HOME}/src/notify_healthchecks.sh && notify_healthchecks "${UUID}/start" "Stoping containers" && ${HOME}/src/stop_containers.sh && notify_healthchecks ${UUID} "Containers stoped successfully" || notify_healthchecks "${UUID}/fail" "Containers did not stop" && notify_healthchecks "${UUID}/start" "Starting containers" && ${HOME}/src/start_containers.sh && notify_healthchecks ${UUID} "Containers started successfully" || notify_healthchecks "${UUID}/fail" "Containers did not start"
 
 # Reinicia los contenedores al reinicia el servidor
 @reboot . ${HOME}/src/notify_healthchecks.sh && notify_healthchecks "${UUID}/start" "Starting containers" && ${HOME}/src/start_containers.sh && notify_healthchecks ${UUID} "Containers started successfully" || notify_healthchecks "${UUID}/fail" "Containers did not start"
