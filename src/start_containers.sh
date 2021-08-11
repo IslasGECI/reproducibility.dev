@@ -5,7 +5,10 @@
 # Carga credenciales:
 HOME=/home/ciencia_datos
 
+
+
 # Corre contenedores
+sudo chmod 777 /var/run/docker.sock # Tengo un problema con los permisos porque el usuario jenkins no tiene permisos de root
 docker pull islasgeci/jenkins:latest
 docker run \
     --detach \
