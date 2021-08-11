@@ -34,6 +34,7 @@ docker run \
     --name weak_inspector \
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume /weak_inspector:/weak_inspector \
     --volume ${HOME}/.ssh:/root/.ssh:ro \
     --volume ${HOME}/.vault/.secrets:/.vault/.secrets \
     islasgeci/weak_inspector:latest
