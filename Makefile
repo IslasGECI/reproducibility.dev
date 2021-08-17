@@ -1,7 +1,7 @@
 playbook:
-	ansible-playbook ansible-playbook.yml
+	ansible-playbook playbook.yml
 
 .PHONY: ping playbook
 
 ping:
-	ansible islasgeci.dev --become --module-name ping 
+	ansible islasgeci.dev --become --module-name ping
