@@ -8,19 +8,6 @@ HOME=/home/ciencia_datos
 
 
 # Corre contenedores
-sudo chmod 777 /var/run/docker.sock # Tengo un problema con los permisos porque el usuario jenkins no tiene permisos de root
-docker pull islasgeci/jenkins:latest
-docker run \
-    --detach \
-    --name jenkins \
-    --publish 50000:50000 \
-    --publish 8080:8080 \
-    --rm \
-    --volume /var/run/docker.sock:/var/run/docker.sock \
-    --volume ${HOME}/.vault/.secrets:/.vault/.secrets \
-    --volume jenkins_home:/var/jenkins_home \
-    islasgeci/jenkins:latest
-
 docker pull islasgeci/reproducibility_inspector:latest
 docker run \
     --detach \
@@ -30,14 +17,3 @@ docker run \
     --volume ${HOME}/.testmake:${HOME}/.testmake \
     --volume ${HOME}/.vault:${HOME}/.vault \
     islasgeci/reproducibility_inspector:latest
-
-docker pull islasgeci/weak_inspector:latest
-docker run \
-    --detach \
-    --name weak_inspector \
-    --rm \
-    --volume /var/run/docker.sock:/var/run/docker.sock \
-    --volume /weak_inspector:/weak_inspector \
-    --volume ${HOME}/.ssh:/root/.ssh:ro \
-    --volume ${HOME}/.vault/.secrets:/.vault/.secrets \
-    islasgeci/weak_inspector:latest
