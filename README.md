@@ -22,7 +22,7 @@ Archivos de código para mantener el VPS de GECI
     - Entra al portal de Azure, en _Network security group > Inbound security rules_ agrega una
       regla para permitir el tráfico a los puertos 8080 y 50000.
 1. Configura islasgeci.dev mediante Ansible desde tu estación de trabajo:
-    1. Verifica la configuración: `ansible islasgeci.dev --module-name ping --become`
     1. Clona este repositorio: `git clone https://github.com/IslasGECI/islasgeci.dev.git`
     1. Entra al repositorio: `cd islasgeci.dev`
+    1. Verifica la configuración: `make ping`
     1. Corre el _playbook_: `make playbook`
