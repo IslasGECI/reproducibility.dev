@@ -14,4 +14,4 @@ UUID=4637ce28-50aa-41c8-93af-1489f5d7d296
 @weekly . ${HOME}/src/notify_healthchecks.sh && notify_healthchecks "${UUID}/start" "Removing containers" && ${HOME}/src/remove_containers.sh && notify_healthchecks ${UUID} "Containers removed successfully" || notify_healthchecks "${UUID}/fail" "Containers were not removed" && sudo reboot now
 
 # Health check
-0 * * * * . ${HOME}/src/health_check.sh ${UUID}
+0 * * * * ${HOME}/src/health_check.sh ${UUID} ${HOME}

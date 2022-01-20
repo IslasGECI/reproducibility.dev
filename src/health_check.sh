@@ -2,5 +2,6 @@
 #
 
 UUID="${1}"
+HOME=${2}
 
-${HOME}/src/notify_healthchecks.sh && notify_healthchecks ${UUID} "Hourly check"
+source ${HOME}/src/notify_healthchecks.sh && notify_healthchecks ${UUID} "Hourly check"
