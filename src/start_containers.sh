@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Corre los contenedores de Docker del servidor islasgeci.dev
+# Corre los contenedores de Docker del servidor reproducibility.dev
 
 # Carga credenciales:
 HOME=/home/ciencia_datos

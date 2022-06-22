@@ -1,5 +1,5 @@
 ---
-- hosts: islasgeci.dev
+- hosts: reproducibility.dev
   tasks:
     - name: Configura huso horario
       timezone:
@@ -60,7 +60,7 @@
       reboot:
       become: yes
 
-- hosts: islasgeci.dev
+- hosts: reproducibility.dev
   tasks:
     - name: Prueba Docker
       docker_container:
